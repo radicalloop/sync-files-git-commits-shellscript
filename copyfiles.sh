@@ -1,5 +1,5 @@
-SRC_DIR="source/directory/path"
-DEST_DIR="destination/directory/path"
+SRC_DIR="/source/directory/path"
+DEST_DIR="/destination/directory/path"
 for file in $(<filelist.txt); 
 do
 	SCRIPTPATH=$(dirname "$file")
