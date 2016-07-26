@@ -6,3 +6,5 @@
   1) source directory path and destination directory path in copyfiles.sh.
   
   2) list of files to copy in filelist.txt.
+    
+  NOTE: In the filelist.txt, only mention the files to copy, and their paths should be relative to the Source Directory path.
