@@ -1,5 +1,5 @@
-SRC_DIR=""
-DEST_DIR="public1/"
+SRC_DIR="" #usually, no need to change this
+DEST_DIR="/path/to/destination/dir/" #change it
 
 dt=$(date +%s)
 
