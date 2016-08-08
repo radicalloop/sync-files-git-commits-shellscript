@@ -16,7 +16,7 @@ if [[ $commits > 0 ]]; then
 	
 	for hashnum in $hashlist;
 	do
-		filelist=`git show --pretty="" --name-only $hashnum`		
+		filelist=`git log -m -1 --name-only --pretty="format:" $hashnum	
 		for filename in $filelist;
 		do
 			echo $filename >> filelist-$dt.txt
