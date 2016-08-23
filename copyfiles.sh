@@ -1,9 +1,9 @@
 SRC_DIR="" #usually, no need to change this
-DEST_DIR="" #change it
+DEST_DIR="/path/to/destination/dir/" #change it - notice the trailing slash
 
 dt=$(date +%s)
 
-echo "Files from how many commits do you want to copy?: "
+echo "Files from how many commits do you want to copy/sync?: "
 read commits
 
 > filelist-$dt.txt
@@ -16,7 +16,7 @@ if [[ $commits > 0 ]]; then
 	
 	for hashnum in $hashlist;
 	do
-		filelist=`git log -m -1 --name-only --pretty="format:" $hashnum `
+		filelist=`git log -m -1 --name-only --pretty="format:" $hashnum`
 		for filename in $filelist;
 		do
 			echo $filename >> filelist-$dt.txt
@@ -24,7 +24,7 @@ if [[ $commits > 0 ]]; then
 	done
 	cat filelist-$dt.txt
 	echo ---------------------------
-	echo 'Proceed copying above files? [y/n]'	
+	echo 'Proceed copying/syncing above files? [y/n]'	
 	read copyans
 	if [[ $copyans == 'y' || $copyans == 'Y' ]]; then
 		for file in $(<filelist-$dt.txt); 
@@ -41,11 +41,11 @@ if [[ $commits > 0 ]]; then
 			then
 				rm -r $DEST_DIR$file 
 			else
-				echo $DEST_DIR$file ' - file not exists'
+				echo $DEST_DIR$file ' - file does not exist.'
 			fi
 
 		done
-		echo "Done copying."	
+		echo "Done syncing."	
 	else
 		echo "Terminated."
 	fi
