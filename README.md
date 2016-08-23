@@ -1,5 +1,5 @@
 # sync-files-git-commits-shellscript
-- Shell script to sync - copy new and modified or delete - files from git commits, from source directory to destination directory, including recursively creating any new directories with same permissions as the source.
+- Shell script to sync - copy or delete - files from git commits, from source directory to destination directory, including recursively creating any new directories with same permissions as the source.
 
 - Just change:
   
